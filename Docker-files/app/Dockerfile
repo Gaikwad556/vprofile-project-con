@@ -5,7 +5,7 @@ RUN cd vprofile-project && git checkout docker && mvn install
 
 FROM tomcat:9-jre11
 
-FROM rm -rf /usr/local/tomcat/webapps/*
+RUN rm -rf /usr/local/tomcat/webapps/*
 LABEL "Project"="Vprofile"
 LABEL "AUthor"="SSgaikwad"
 COPY --from=BUILD_IMAGE vprofile-project/target/vprofile-v2.war /usr/local/tomcat/webapps/ROOT.war
