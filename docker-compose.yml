@@ -41,4 +41,7 @@ services:
     ports:
       - "80:80"
   
+volumes:
+  vprodbdata: {}
+  vprowebdata: {}
 
