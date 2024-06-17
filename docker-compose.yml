@@ -2,13 +2,8 @@ version: '3.8'
 services:
   vprodb:
     build: 
-<<<<<<< HEAD
       - context: ./Docker-files/db/
     images: ssgaikwad/vprofiledb
-=======
-      context: ./Docker-files/db
-    image: ssgaikwad/vprofiledb
->>>>>>> d176436e5e6a6fcab5b9256d30138d59c97f94ab
     container_name: vprodb
     ports:
       - "3306:3306"
@@ -16,7 +11,6 @@ services:
       - vprodbdata:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=vprodbpass
-<<<<<<< HEAD
 
   vprocache01:
     image: memcached
@@ -35,32 +29,11 @@ services:
     build:
       - context: ./Docker-files/app/
     images: ssgaikwad/vprofileapp
-=======
-  
-  vprocache01:
-    image: "memcached"
-    ports:
-      - "11211:11211"
-  
-  vpromq01:
-    image: "rabbitmq"
-    ports:
-      - "15672:15672"
-    environment:
-      - RABBITMQ_DEFAULT_USER=guest
-      - RABBITMQ_DEFAULT_PASS=guest
-
-  vproapp:
-    build: 
-      context: ./Docker-files/app
-    image: ssgaikwad/vprofileapp
->>>>>>> d176436e5e6a6fcab5b9256d30138d59c97f94ab
     container_name: vproapp
     ports:
       - "8080:8080"
     volumes:
       - vproappdata:/usr/local/tomcat/webapps
-<<<<<<< HEAD
   vproweb:
     build:
       - context: ./Docker-files/web/
@@ -73,18 +46,3 @@ service:
   vprodbdata: {}
   vproappdata: {}
     
-=======
-
-  vproweb:
-    build: 
-      context: ./Docker-files/web
-    image: ssgaikwad/vprofileweb
-    container_name: vproweb
-    ports:
-      - "80:80"
-        
-
-volumes:
-  vproappdata: {}
-  vprodbdata: {}
->>>>>>> d176436e5e6a6fcab5b9256d30138d59c97f94ab
