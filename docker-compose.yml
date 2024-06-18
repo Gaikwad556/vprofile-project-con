@@ -1,14 +1,15 @@
 version: '3.8'
 service:
   vprodb:
-    context: ./Docker-files/db
-  image: ssgaikwad/db
-  container-name: vprodb
-  ports:
+    build:
+      context: ./Docker-files/db
+    image: ssgaikwad/db
+    container-name: vprodb
+    ports:
     - "3306:3306"
-  environment:
+    environment:
     - MYSQL_ROOT_PASSWORD=vprodbpass
-  volume:
+    volume:
     - vprodbdata:/var/lib/mysql
   
   vprocache01:
