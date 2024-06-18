@@ -6,11 +6,11 @@ services:
     image: ssgaikwad/db
     container-name: vprodb
     ports:
-    - "3306:3306"
+      - "3306:3306"
     environment:
-    - MYSQL_ROOT_PASSWORD=vprodbpass
+      - MYSQL_ROOT_PASSWORD=vprodbpass
     volume:
-    - vprodbdata:/var/lib/mysql
+      - vprodbdata:/var/lib/mysql
   
   vprocache01:
     image: memcached
