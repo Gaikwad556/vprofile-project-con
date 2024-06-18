@@ -4,7 +4,7 @@ services:
     build:
       context: ./Docker-files/db
     image: ssgaikwad/db
-    container-name: vprodb
+    container_name: vprodb
     ports:
       - "3306:3306"
     environment:
@@ -29,7 +29,7 @@ services:
     build:
       context: ./Docker-files/app
     image: ssgaikwad/app
-    container-name: vproapp
+    container_name: vproapp
     ports:
       - "8080:8080"
     volume:
@@ -39,7 +39,7 @@ services:
     build:
       context: ./Docker-files/web
     images: ssgaikwad/web
-    container-name: vproweb
+    container_name: vproweb
     ports:
       - "80:80"
 
