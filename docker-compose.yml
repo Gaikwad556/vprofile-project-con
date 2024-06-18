@@ -9,7 +9,7 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=vprodbpass
-    volume:
+    volumes:
       - vprodbdata:/var/lib/mysql
   
   vprocache01:
@@ -32,7 +32,7 @@ services:
     container_name: vproapp
     ports:
       - "8080:8080"
-    volume:
+    volumes:
       - vproappdata:/usr/local/tomcat/webapps
     
   vproweb:
